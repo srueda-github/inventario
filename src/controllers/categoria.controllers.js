@@ -1,13 +1,13 @@
 import getConnection from "./../db/database.js"
 
-const getCategorias = async (req, res) => {
+const getCategorias = async (req, res)=>{
     try {
         const connection = await getConnection();
-        const [rows] = await connection.query("SELECT * FROM categorias");
-        res.json(rows);    
+        const result = await connection.query("SELECT * FROM categorias")
+        console.log(rows); 
+        res.json(result);    
     } catch (error) {
-        console.error("Error 500 en getCategorias:", error); 
-        res.status(500).json({ message: "Error interno del servidor" });
+        console.log("Error 500"); 
     }
 }
 
