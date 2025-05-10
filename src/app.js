@@ -22,7 +22,10 @@ app.use("/api/productos",productosRoutes)
 app.use("/api/empleados",empleadosRoutes)
 app.use("/api/clientes",clientesRoutes)
 
+app.get('/', (req,res)=>{
+    res.send('REST API EN RENDER WITHOUT DATABASE ENDPOINTS')
 
+})
 
 
 /* hacemos disponible a mi server app para toda la aplicacion */
